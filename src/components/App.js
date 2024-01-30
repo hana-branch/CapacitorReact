@@ -22,35 +22,34 @@ import { IonText, setupIonicReact } from '@ionic/react';
 setupIonicReact();
 
 const App = () => {
-	useEffect(() => {
+  useEffect(() => {
     branchListener();
   }, [])
 
-	const openWebview = async (canonical_url) => {
+  const openWebview = async (canonical_url) => {
     await Browser.open({ url: canonical_url });
   };
 
-	const branchListener = () => {
-		BranchDeepLinks.addListener('init', (event) => {
-			console.log(`[branch.io] Success to initialize: ${JSON.stringify(event.referringParams)}`);
-			if (event.referringParams.$canonical_url) {
-				console.log(`[branch.io] $canonical_url : ${event.referringParams.$canonical_url}`);
-				openWebview(event.referringParams.$canonical_url);
-			}
-		});
+  const branchListener = () => {
+    BranchDeepLinks.addListener('init', (event) => {
+      console.log(`[branch.io] Success to initialize: ${JSON.stringify(event.referringParams)}`);
+      if (event.referringParams.$canonical_url) {
+        console.log(`[branch.io] $canonical_url : ${event.referringParams.$canonical_url}`);
+        openWebview(event.referringParams.$canonical_url);
+      }
+    });
+    
+    BranchDeepLinks.addListener('initError', (error) => {
+      console.log(`[branch.io] Fails to initialize: ${error}`);
+    });
+  }
 
-		BranchDeepLinks.addListener('initError', (error) => {
-			console.log(`[branch.io] Fails to initialize: ${error}`);
-		});
-
-	}
-
-  return ( 
-  	<React.Fragment>
-			<IonText color="primary">
-  			<h1 style={{fontWeight: "bolder"}}>HOME</h1>
-			</IonText>
-  	</React.Fragment>
+  return (
+    <React.Fragment>
+      <IonText color="primary">
+        <h1 style={{fontWeight: "bolder"}}>HOME</h1>
+      </IonText>
+    </React.Fragment>
   );
 }
 

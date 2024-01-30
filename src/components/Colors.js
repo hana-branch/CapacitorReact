@@ -40,8 +40,8 @@ const Colors = () => {
   return (
     <React.Fragment>
       <IonText color="primary">
-  			<h1 style={{fontWeight: 'bolder'}}>COLORS</h1>
-			</IonText><br />
+        <h1 style={{fontWeight: 'bolder'}}>COLORS</h1>
+      </IonText><br />
       <IonButton expand="block" onClick={onClickCreatePurchaseEvent}>CLICK PURCHASE!!</IonButton><br />
       <IonButton expand="block" onClick={openBranchSite}>Open Browser!</IonButton>
     </React.Fragment>

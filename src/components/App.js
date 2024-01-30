@@ -16,6 +16,7 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
+import { Browser } from '@capacitor/browser';
 
 import { IonText, setupIonicReact } from '@ionic/react';
 setupIonicReact();
@@ -25,9 +26,17 @@ const App = () => {
     branchListener();
   }, [])
 
+	const openWebview = async (canonical_url) => {
+    await Browser.open({ url: canonical_url });
+  };
+
 	const branchListener = () => {
 		BranchDeepLinks.addListener('init', (event) => {
-			console.log(`[branch.io] Success to initialize: ${event.referringParams}`);
+			console.log(`[branch.io] Success to initialize: ${JSON.stringify(event.referringParams)}`);
+			if (event.referringParams.$canonical_url) {
+				console.log(`[branch.io] $canonical_url : ${event.referringParams.$canonical_url}`);
+				openWebview(event.referringParams.$canonical_url);
+			}
 		});
 
 		BranchDeepLinks.addListener('initError', (error) => {

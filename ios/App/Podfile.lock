@@ -5,11 +5,14 @@ PODS:
   - CapacitorBranchDeepLinks (6.0.0):
     - BranchSDK
     - Capacitor
+  - CapacitorBrowser (5.2.0):
+    - Capacitor
   - CapacitorCordova (5.6.0)
 
 DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
   - CapacitorBranchDeepLinks (from `../../node_modules/capacitor-branch-deep-links`)
+  - "CapacitorBrowser (from `../../node_modules/@capacitor/browser`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
 
 SPEC REPOS:
@@ -21,6 +24,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/ios"
   CapacitorBranchDeepLinks:
     :path: "../../node_modules/capacitor-branch-deep-links"
+  CapacitorBrowser:
+    :path: "../../node_modules/@capacitor/browser"
   CapacitorCordova:
     :path: "../../node_modules/@capacitor/ios"
 
@@ -28,8 +33,9 @@ SPEC CHECKSUMS:
   BranchSDK: e268bcf41469051c9e83efcd6fd85d0ba91d1d0f
   Capacitor: ebfc16cdb8116d04c101686b080342872da42d43
   CapacitorBranchDeepLinks: 6908a1bfec361ee740ab1b0f32defe623149df76
+  CapacitorBrowser: a6deae9e5bf87f62b62a753cff7992c5def9e771
   CapacitorCordova: 931b48fcdbc9bc985fc2f16cec9f77c794a27729
 
-PODFILE CHECKSUM: 5d2895c7e50bdffbf6ad97487ed63e8678dd29ce
+PODFILE CHECKSUM: 0e67358cd054827f44e94e17e2484d14bba3be34
 
 COCOAPODS: 1.11.3

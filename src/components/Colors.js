@@ -1,12 +1,13 @@
 import React from 'react';
 import { BranchDeepLinks } from 'capacitor-branch-deep-links';
-import { IonText } from '@ionic/react';
+import { IonText, IonButton } from '@ionic/react';
+import { Browser } from '@capacitor/browser';
 
 const Colors = () => {
   const onClickCreatePurchaseEvent = () => {
     // get a list of all Branch standard events
     BranchDeepLinks.getStandardEvents().then(function (res) {
-      alert('[branch.io] Response: ' + JSON.stringify(res.branch_standard_events))
+      alert('[branch.io] Response: ' + JSON.stringify(res))
     }).catch(function (err) {
       alert('[branch.io] Error: ' + JSON.stringify(err))
     })
@@ -32,12 +33,17 @@ const Colors = () => {
     BranchDeepLinks.sendBranchEvent({ eventName, metaData })
   }
 
+  const openBranchSite = async () => {
+    await Browser.open({ url: 'http://branch.io/' });
+  };
+
   return (
     <React.Fragment>
       <IonText color="primary">
-  			<h1 style={{"font-weight": "bolder"}}>COLORS</h1>
+  			<h1 style={{fontWeight: 'bolder'}}>COLORS</h1>
 			</IonText><br />
-      <ion-button onClick={onClickCreatePurchaseEvent}>CLICK PURCHASE!!</ion-button>
+      <IonButton expand="block" onClick={onClickCreatePurchaseEvent}>CLICK PURCHASE!!</IonButton><br />
+      <IonButton expand="block" onClick={openBranchSite}>Open Browser!</IonButton>
     </React.Fragment>
   );
 }

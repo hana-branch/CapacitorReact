@@ -39,7 +39,7 @@ const App = () => {
   return ( 
   	<React.Fragment>
 			<IonText color="primary">
-  			<h1 style={{"font-weight": "bolder"}}>HOME</h1>
+  			<h1 style={{fontWeight: "bolder"}}>HOME</h1>
 			</IonText>
   	</React.Fragment>
   );

@@ -1,4 +1,4 @@
-package com.example;
+package dev.hana.hanatestapp;
 
 import android.content.Context;
 import android.os.UserManager;
@@ -30,4 +30,5 @@ public class CustomApplicationClass extends MultiDexApplication {
     super.attachBaseContext(base);
     MultiDex.install(this);
   }
+
 }

@@ -4,6 +4,10 @@ import com.getcapacitor.BridgeActivity;
 import co.boundstate.BranchDeepLinks;
 import io.branch.referral.Branch;
 import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+
+import com.getcapacitor.Plugin;
 
 public class MainActivity extends BridgeActivity {
   @Override
@@ -15,7 +19,7 @@ public class MainActivity extends BridgeActivity {
 
   @Override
   protected void onNewIntent(Intent intent) {
-    this.setIntent(intent);
     super.onNewIntent(intent);
+    this.setIntent(intent);
   }
 }

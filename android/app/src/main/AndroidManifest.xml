@@ -46,10 +46,6 @@
                 <data android:host="hanadev1-alternate.app.link" />
                 <data android:host="hanadev1.test-app.link" />
                 <data android:host="hanadev1-alternate.test.app.link" />
-                <data android:host="hparksendgrid.branch.rocks" />
-                <data android:host="hana-branch.github.io" />
-                <data android:path="/" />
-                <data android:pathPrefix="/store" />
 
             </intent-filter>
 
